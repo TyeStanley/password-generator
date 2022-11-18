@@ -1,11 +1,11 @@
 // Assignment code here
-var passwordLength = 8;
-var passwordSelection = [];
+let passwordLength = 8;
+let passwordSelection = [];
 
-var specialArr = ["!", "@", "#", "$", "%", "^", "&", "*", "?", "+", "-"];
-var lowerCaseArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var upperCaseArr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var numberArr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+let specialArr = ["!", "@", "#", "$", "%", "^", "&", "*", "?", "+", "-"];
+let lowerCaseArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+let upperCaseArr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+let numberArr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 function getPrompts() {
   passwordSelection = [];
@@ -32,24 +32,24 @@ function getPrompts() {
 
 function generatePassword() {
   // Create a random password based on getPrompts
-  var password = "";
-  for (var i = 0; i < passwordLength; i++) {
-    var randomCharacter = Math.floor(Math.random() * passwordSelection.length);
+  let password = "";
+  for (let i = 0; i < passwordLength; i++) {
+    let randomCharacter = Math.floor(Math.random() * passwordSelection.length);
     password = password + passwordSelection[randomCharacter];
   }
   return password;
 };
 
 // Get references to the #generate element
-var generateBtn = document.querySelector("#generate"); 
+let generateBtn = document.querySelector("#generate"); 
 
 // Write password to the #password input
 function writePassword() {
-  var correctPrompts = getPrompts();
-  var passwordText = document.querySelector("#password"); 
+  let correctPrompts = getPrompts();
+  let passwordText = document.querySelector("#password"); 
 
   if (correctPrompts) {
-    var password = generatePassword();
+    let password = generatePassword();
     passwordText.value = password;
   } else {
     passwordText.value = "";

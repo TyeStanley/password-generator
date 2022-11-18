@@ -14,7 +14,7 @@ body,
 
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  background-color: #333;
 }
 
 .wrapper {
@@ -27,7 +27,10 @@ header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  /* color: hsl(206, 17%, 28%); */
+  color: white;
+  transform: scale(1);
+  animation: pulse 1s infinite;
 }
 
 .card {
@@ -40,6 +43,7 @@ header {
   margin: 0 auto;
   max-width: 800px;
   padding: 30px 40px;
+  border: 2px solid red;
 }
 
 .card-header::after {
@@ -76,8 +80,7 @@ header {
   border: none;
   background-color: hsl(360, 91%, 36%);
   border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
-    0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
   color: hsl(0, 0%, 100%);
   display: inline-block;
   font-size: 22px;
@@ -86,6 +89,11 @@ header {
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  transition: .2s linear;
 }
 
 button[disabled] {
@@ -134,4 +142,18 @@ button[disabled] {
   .btn {
     font-size: 0.8rem;
   }
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+	}
+
+	50% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(0.95);
+	}
 }
